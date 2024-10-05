@@ -25,3 +25,26 @@ int main(){
  printCharacter(inputStr);
  return 0;
 }
+
+optimisation-
+#include <iostream>
+#include <map>
+using namespace std;
+//Hashing Approach - Time : O(n), Space : O(n)
+void printCharacter (string & inputStr){
+ cout<<"Non-Repeating Characters : ";
+ map <char, int> hash;
+ for (const char & i : inputStr) hash[i]++;
+ for (const pair <char, int> & i : hash)
+ if (i.second == 1) 
+ cout<<i.first<<" ";
+ cout<<endl;
+}
+int main(){
+ string inputStr;
+ cout<<"\nEnter the string : ";
+ getline(cin, inputStr);
+ printCharacter(inputStr);
+ return 0;
+}
+
